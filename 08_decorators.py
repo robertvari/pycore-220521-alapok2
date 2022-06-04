@@ -1,6 +1,16 @@
 import time, random
 
 
+# func = function
+def my_timer(func):
+    def wrapper():
+        start_time = time.time()
+        func()
+        print(f"Process time: {time.time() - start_time}")
+
+    return wrapper
+
+
 def worker1():
     print("Worker 1 started...")
     time.sleep(random.uniform(3.0, 10.0))
