@@ -6,6 +6,7 @@ from utilities.resources import get_resource
 from game_assets.background import draw_background
 from game_assets.clouds import draw_clouds
 from game_assets.ground import draw_ground
+from game_assets.trex import draw_trex
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
@@ -27,6 +28,9 @@ def main():
 
         # draw ground
         draw_ground(SCREEN)
+
+        # draw trex
+        draw_trex(SCREEN)
 
         pygame.display.update()
         clock.tick(FPS)
