@@ -4,6 +4,7 @@ pygame.init()
 from utilities.settings import *
 from utilities.resources import get_resource
 from game_assets.background import draw_background
+from game_assets.clouds import draw_clouds
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
@@ -18,7 +19,11 @@ def main():
 
         # graphics, sounds stb...
         SCREEN.fill(SKYCOLOR)
+
+        # draw mountains and sky
         draw_background(SCREEN)
+        draw_clouds(SCREEN)
+
 
         pygame.display.update()
         clock.tick(FPS)
