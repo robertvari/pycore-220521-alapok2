@@ -1,0 +1,4 @@
+SCREENSIZE = (1200, 400)
+FPS = 60
+GAMETITLE = "My First Game!!!"
+SKYCOLOR = "#3282C1"
