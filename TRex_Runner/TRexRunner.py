@@ -7,7 +7,7 @@ from game_assets.background import draw_background
 from game_assets.clouds import draw_clouds
 from game_assets.ground import draw_ground
 from game_assets.trex import draw_trex, get_trex_rect
-from game_assets.obstacles import draw_cactus, get_cactus_rect
+from game_assets.obstacles import draw_cactus, get_cactus_rect, reset_cactus
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
@@ -42,6 +42,8 @@ def main():
 
 
 def check_events():
+    global GAME_OVER
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             close_game()
@@ -49,13 +51,19 @@ def check_events():
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
             close_game()
 
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            reset_cactus()
+            GAME_OVER = False
+
 
 def check_collisions():
+    global GAME_OVER
+
     trex_rect = get_trex_rect()
     cactus_rect = get_cactus_rect()
 
     if trex_rect.colliderect(cactus_rect):
-        print("Trex ran into a cactus!!")
+        GAME_OVER = True
 
 
 def close_game():

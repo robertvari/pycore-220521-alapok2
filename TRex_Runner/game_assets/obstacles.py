@@ -35,5 +35,12 @@ def get_cactus_rect():
     return CACTUS_RECT
 
 
+def reset_cactus():
+    global CACTUS_IMAGE, CACTUS_RECT
+
+    CACTUS_IMAGE = random.choice(CACTUSES)
+    CACTUS_RECT = CACTUS_IMAGE.get_rect(bottomleft=(SCREENSIZE[0], GROUND_POS))
+
+
 def bird(screen):
     pass
