@@ -3,6 +3,7 @@ pygame.init()
 
 from utilities.settings import *
 from utilities.resources import get_resource
+from game_assets.background import draw_background
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
@@ -17,6 +18,7 @@ def main():
 
         # graphics, sounds stb...
         SCREEN.fill(SKYCOLOR)
+        draw_background(SCREEN)
 
         pygame.display.update()
         clock.tick(FPS)

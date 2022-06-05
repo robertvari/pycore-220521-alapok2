@@ -6,4 +6,4 @@ MOUNTAINS = pygame.image.load(get_resource("mountains.png"))
 
 
 def draw_background(screen):
-    screen.blit(MOUNTAINS, (0, 0))
+    screen.blit(MOUNTAINS, (-500, -50))
