@@ -5,6 +5,7 @@ from utilities.settings import *
 from utilities.resources import get_resource
 from game_assets.background import draw_background
 from game_assets.clouds import draw_clouds
+from game_assets.ground import draw_ground
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
@@ -24,6 +25,8 @@ def main():
         draw_background(SCREEN)
         draw_clouds(SCREEN)
 
+        # draw ground
+        draw_ground(SCREEN)
 
         pygame.display.update()
         clock.tick(FPS)
