@@ -1,6 +1,5 @@
 import pygame
 from utilities.resources import get_resource
-from utilities.settings import *
 
 
 CLOUDS_1 = pygame.image.load(get_resource("clouds.png"))
