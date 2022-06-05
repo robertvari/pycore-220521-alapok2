@@ -63,6 +63,8 @@ def check_collisions():
     global GAME_OVER
 
     trex_rect = get_trex_rect()
+    # pygame.draw.rect(SCREEN, "green", trex_rect, 3)
+
     cactus_rect = get_cactus_rect()
 
     if trex_rect.colliderect(cactus_rect):

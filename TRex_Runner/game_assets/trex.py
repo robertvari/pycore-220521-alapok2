@@ -49,4 +49,4 @@ def trex_jump():
 
 
 def get_trex_rect():
-    return TREX_RECT
+    return TREX_RECT.inflate(-100, -30)
