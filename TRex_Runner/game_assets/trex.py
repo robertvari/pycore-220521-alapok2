@@ -36,7 +36,7 @@ def draw_trex(screen):
         ON_GROUND = True
 
     screen.blit(TREX_IMAGE, TREX_RECT)
-    pygame.draw.rect(screen, "blue", TREX_RECT, 3)
+    # pygame.draw.rect(screen, "blue", TREX_RECT, 3)
 
 
 def trex_jump():

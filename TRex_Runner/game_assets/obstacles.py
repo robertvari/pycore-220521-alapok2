@@ -25,7 +25,7 @@ def draw_cactus(screen):
         CACTUS_IMAGE = random.choice(CACTUSES)
         CACTUS_RECT = CACTUS_IMAGE.get_rect(bottomleft=(SCREENSIZE[0], GROUND_POS))
 
-    pygame.draw.rect(screen, "red", CACTUS_RECT, 3)
+    # pygame.draw.rect(screen, "red", CACTUS_RECT, 3)
 
     screen.blit(CACTUS_IMAGE, CACTUS_RECT)
     CACTUS_RECT.x -= GROUND_SPEED
