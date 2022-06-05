@@ -7,6 +7,7 @@ TREX_RUN = [
 ]
 
 TREX_JUMP = pygame.image.load(get_resource("trex_jump.png"))
+JUMP_SOUND = pygame.mixer.Sound(get_resource("jump.wav"))
 
 FRAME = 0
 ANIM_SPEED = 0.2
@@ -46,6 +47,7 @@ def trex_jump():
 
     GRAVITY -= 20
     ON_GROUND = False
+    JUMP_SOUND.play()
 
 
 def get_trex_rect():
