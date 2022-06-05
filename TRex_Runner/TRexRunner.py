@@ -8,11 +8,31 @@ SCREEN = pygame.display.set_mode(SCREENSIZE)
 pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
 
-while True:
+
+def main():
+    # game loop
+    while True:
+        check_events()
+
+        # graphics, sounds stb...
+        SCREEN.fill(SKYCOLOR)
+
+        pygame.display.update()
+        clock.tick(FPS)
+
+
+def check_events():
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+            close_game()
 
-    pygame.display.update()
-    clock.tick(FPS)
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+            close_game()
+
+
+def close_game():
+    pygame.quit()
+    sys.exit()
+
+
+main()
