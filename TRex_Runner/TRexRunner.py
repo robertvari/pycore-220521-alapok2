@@ -6,14 +6,14 @@ from game_assets.game_over_screen import draw_game_over
 from game_assets.background import draw_background
 from game_assets.clouds import draw_clouds
 from game_assets.ground import draw_ground
-from game_assets.trex import draw_trex, get_trex_rect
+from game_assets.trex import draw_trex, get_trex_rect, trex_jump
 from game_assets.obstacles import draw_cactus, get_cactus_rect, reset_cactus
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
 pygame.display.set_caption(GAMETITLE)
 clock = pygame.time.Clock()
-GAME_OVER = True
+GAME_OVER = False
 
 
 def main():
@@ -52,8 +52,11 @@ def check_events():
             close_game()
 
         if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-            reset_cactus()
-            GAME_OVER = False
+            if GAME_OVER:
+                reset_cactus()
+                GAME_OVER = False
+            else:
+                trex_jump()
 
 
 def check_collisions():
