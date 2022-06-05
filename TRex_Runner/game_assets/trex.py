@@ -18,10 +18,15 @@ TREX_RECT = TREX_IMAGE.get_rect(y=GROUND_POS)
 def draw_trex(screen):
     global FRAME, TREX_IMAGE
 
-    screen.blit(TREX_IMAGE, TREX_RECT)
-
     FRAME += ANIM_SPEED
     if FRAME >= len(TREX_RUN):
         FRAME = 0
 
     TREX_IMAGE = TREX_RUN[int(FRAME)]
+
+    screen.blit(TREX_IMAGE, TREX_RECT)
+    pygame.draw.rect(screen, "blue", TREX_RECT, 3)
+
+
+def get_trex_rect():
+    return TREX_RECT
