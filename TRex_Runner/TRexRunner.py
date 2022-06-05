@@ -2,6 +2,7 @@ import pygame, sys
 pygame.init()
 
 from utilities.settings import *
+from utilities.resources import get_resource
 
 # game window settings
 SCREEN = pygame.display.set_mode(SCREENSIZE)
