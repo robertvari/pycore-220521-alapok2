@@ -1,2 +1,9 @@
+import pygame
+from utilities.resources import get_resource
+
+
+MOUNTAINS = pygame.image.load(get_resource("mountains.png"))
+
+
 def draw_background(screen):
-    pass
+    screen.blit(MOUNTAINS, (0, 0))
